@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Saitama
   m_EditorClassIdentifier: 
   ID: 0
-  realName: 
-  description: 
-  quickDescription: 
-  model: {fileID: 0}
+  realName: Saitama
+  description: One Punch
+  quickDescription: One Punch
+  model: {fileID: 8974714480709127268, guid: 472274f652a4c6345a057625b6c72357, type: 3}

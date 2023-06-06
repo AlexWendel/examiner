@@ -16,4 +16,4 @@ MonoBehaviour:
   realName: Pikachu
   description: "\xC9 um Pikachu vestido de Gengar."
   quickDescription: 
-  model: {fileID: 0}
+  model: {fileID: 7984602514562164398, guid: d38bdd67d1325af4e8c097f451a15fe1, type: 3}
