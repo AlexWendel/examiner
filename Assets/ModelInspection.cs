@@ -42,20 +42,22 @@ public class ModelInspection : MonoBehaviour
 
     void Update(){
 
-        if (canRotate){
+        if (canRotate && Mouse.current.leftButton.isPressed){
             // Obter a posição atual do mouse
             Vector2 currentMousePosition = Mouse.current.position.ReadValue();
+            if (currentMousePosition != previousMousePosition){
+                // Calcular a diferença entre a posição atual e a última posição do mouse
+                Vector2 mouseDelta = currentMousePosition - previousMousePosition;
 
-            // Calcular a diferença entre a posição atual e a última posição do mouse
-            Vector2 mouseDelta = currentMousePosition - previousMousePosition;
+                // Calcular a velocidade de rotação
+                float rotationSpeedx = 3f;
+                float rotationSpeedy = .5f;
 
-            // Calcular a velocidade de rotação
-            float rotationSpeedx = 3f;
-            float rotationSpeedy = 2f;
+                // Aplicar a rotação do modelo nos eixos X e Y com base na diferença do mouse
+                lookPivot.Rotate(Vector3.up, -mouseDelta.x * rotationSpeedx, Space.World);
+                lookPivot.Rotate(Vector3.left, -mouseDelta.y * rotationSpeedy, Space.Self);                
+            }
 
-            // Aplicar a rotação do modelo nos eixos X e Y com base na diferença do mouse
-            lookPivot.Rotate(Vector3.up, -mouseDelta.x * rotationSpeedx, Space.World);
-            lookPivot.Rotate(Vector3.right, -mouseDelta.y * rotationSpeedy, Space.Self);
 
             // Atualizar a última posição do mouse
             previousMousePosition = currentMousePosition;                
